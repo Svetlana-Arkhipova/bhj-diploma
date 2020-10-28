@@ -26,5 +26,8 @@ const createRequest = (options = {}) => {
       options.callback(err);
     }
   }
+  xhr.onerror = (error) => {
+    options.callback(error);
+  }
   return xhr;
 };
